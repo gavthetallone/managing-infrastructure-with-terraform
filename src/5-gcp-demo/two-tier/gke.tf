@@ -7,11 +7,6 @@ resource "google_container_cluster" "primary" {
     "${var.region}-b",
   ]
 
-  master_auth {
-    username = "${var.gke_master_user}"
-    password = "${var.gke_master_pass}"
-  }
-
   node_config {
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
